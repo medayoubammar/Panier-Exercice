@@ -1,46 +1,199 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Commerce</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <title>Home</title>
+  </head>
+  <body>
+    <div class="myNavbar">
+      <ul class="nav justify-content-end">
+        <li class="nav-item col-5 text-end">
+          <a class="nav-link" aria-current="page" href="/index.html">Home</a>
+        </li>
+        <li class="nav-item col-5 text-start">
+          <a class="nav-link text-dark" href="/games.html">Games</a>
+        </li>
+        <li class="col-2">
+          <button class="btn btn-sm btn-danger" onclick="resetPanier()">
+            X
           </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-              <a class="nav-link" href="#">Features</a>
-           
-            </div>
-            <h1> Panier : 
-                <button class="btn btn-danger" id="rmv" onclick="resetPanier()">x</button>
-               <button class="btn btn-warning" id="shows" onclick="showPanier()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
-                    <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
-                  </svg>
-               </button>
-               <button id="panier" class="btn btn-success">0</button>
-            </h1>
+          <button id="shows" class="bg-warning m-1 " onclick="showPanier()" >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/118/118089.png"
+              width="30px"
+              alt=""
+            />
+          </button>
+
+          <span id="panier" class="bg-success rounded p-2 text-light">0</span>
+          <ul id="myProducts" class="bg-warning text-dark">
+            
+          </ul>
+
+          <p id="somme" class="bg-warning text-dark"></p>
+        </li>
+      </ul>
+    </div>
+
+    <p class="display-3 text-center bg-info text-light">OUR AVAILABLE GAMES</p>
+    <div class="container my-5" id="products">
+      <div class="cardss d-flex justify-content-between">
+        <div class="card w-25">
+          <img
+            src="https://www.pa-sport.fr/wp-content/uploads/2K-NBA-BASKETBALL.jpg"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+          </div>
+          <button
+            id="NBA"
+            class="btn btn-info align-center text-center text-light"
+            onclick="moveToBuy('NBA')"
+          >
+            Click to add
+          </button>
+        </div>
+        <div class="card w-25">
+          <img
+            src="https://static.actugaming.net/media/2021/10/fifa-22.jpg"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+          </div>
+          <button
+            id="fifa"
+            class="btn btn-info align-center text-center text-light"
+            onclick="moveToBuy('fifa')"
+          >
+            Click to add
+          </button>
+        </div>
+        <div class="card w-25">
+          <img
+            src="https://image.jeuxvideo.com/medias/146281/1462807289-2712-jaquette-avant.jpg"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+          </div>
+          <button
+            id="uncharted"
+            class="btn btn-info align-center text-center text-light"
+            onclick="moveToBuy('uncharted')"
+          >
+            Click to add
+          </button>
+        </div>
+      </div>
+      <div class="cardss d-flex justify-content-between mt-3">
+        <div class="card w-25">
+          <img
+            src="https://cdn1.epicgames.com/b4565296c22549e4830c13bc7506642d/offer/TETRA_PREORDER_STANDARD%20EDITION_EPIC_Store_Portrait_1200x1600-1200x1600-ca8b802ff13813c37a44ebf68d0946a2.png"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+          </div>
+          <button
+            id="farCry"
+            class="btn btn-info align-center text-center text-light"
+            onclick="moveToBuy('farCry')"
+          >
+            Click to add
+          </button>
+        </div>
+        <div class="card w-25">
+          <img
+            src="https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2022/4/25/i2fztzhlhvqrgmikwaqo/fade-valorant"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+          </div>
+          <button
+            id="valo"
+            class="btn btn-info align-center text-center text-light"
+            onclick="moveToBuy('valo')"
+          >
+            Click to add
+          </button>
+        </div>
+        <div class="card w-25">
+          <img
+            src="https://sm.ign.com/ign_fr/cover/a/among-us/among-us_fgvp.jpg"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+          </div>
+          <button
+            id="amoung"
+            class="btn btn-info align-center text-center text-light"
+            onclick="moveToBuy('amoung')"
+          >
+            Click to add
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="card mb-3">
+        <img
+          src="https://www.seekpng.com/png/full/760-7608336_city-silhouette-games-footer.png"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body bg-info">
+          <h5 class="card-title text-light text-center">Contact us</h5>
+          <div class="d-flex justify-content-between">
+            <p class="card-text">+216 23654987</p>
+
+            <p class="card-text">Master Class, DenDen , Manouba</p>
+            <p class="card-text">masterClass.com</p>
           </div>
         </div>
-      </nav>
-    <div class="card" style="width: 18rem;">
-        <img src="data:image/jpeg;base64,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" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">FIFA 24</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          
-        </div>
-      <button id="fifa" onclick="moveToBuy('FIFA')" class="btn btn-primary">Click to add</button>
       </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
-</body>
+    </div>
+  </body>
+  <!-- JavaScript Bundle with Popper -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"
+  ></script>
+  <script src="script.js"></script>
 </html>
